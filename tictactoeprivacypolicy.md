@@ -1,1 +1,0 @@
-Privacy Policy for Most Difficult Tic Tac Toe
