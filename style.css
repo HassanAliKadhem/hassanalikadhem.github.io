@@ -1,0 +1,77 @@
+body {
+      font-size: 20px;
+      background-color: rgb(241, 241, 241);
+      margin: 0;
+      padding: 0;
+}
+
+strong {
+      color: rgb(96, 96, 96);
+}
+
+h1 {
+      color: rgb(96, 96, 96);
+}
+
+.menubar li {
+      display: block;
+      float: left;
+}
+
+.menubar li a {
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      transition: color 350ms;
+}
+
+.menubar li a:hover {
+      color: blue;
+}
+
+.menubar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 2em 2em;
+      overflow: hidden;
+}
+
+.menubar {
+      background-color: rgb(241, 241, 241);
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+}
+
+.section {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: rgb(247, 247, 247);
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      margin: 1em 1em;
+      padding: 0.1em 2em;
+}
+
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+      .section {
+            flex-direction: column;
+      }
+}
+
+.eng {
+      flex: 1;
+}
+
+.picture {
+      flex: 1;
+}
+
+.arb {
+      flex: 1;
+      direction: rtl;
+}
