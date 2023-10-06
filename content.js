@@ -131,17 +131,10 @@ if (targetDiv !== null) { // check if the cv page
         </div>`;
         var order = (index % 2 == 0) ? 'order-first' : '';
         var imageSection = `<img class="` + order + `" src="` + section.imgLink + `" alt="` + section.imgAlt + `">`;
-        // if (index % 2 == 0) {
         sectionDiv.innerHTML = `<div class="row row-cols-1 row-cols-lg-2 g-2 p-5">
                 `+ contentSection + `
                 `+ imageSection + `
             </div>`;
-        // } else {
-        //     sectionDiv.innerHTML = `<div class="row row-cols-1 row-cols-lg-2 g-2 p-5">
-        //         `+ imageSection + `
-        //         `+ contentSection + `
-        //     </div>`;
-        // }
         targetDiv.appendChild(sectionDiv);
         index++;
     });
