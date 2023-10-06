@@ -32,8 +32,7 @@ if (targetDiv !== null) { // check if the cv page
         <strong>C#</strong> / CLI, GUI, Games and Web apps using ASP.NET<br>
         <strong>Python</strong> / CLI applications and API<br>
         <strong>Swift</strong> / IOS Applications<br>
-        <strong>Flutter</strong> / mobile application, i have a flutter application in the play
-        store<br>
+        <strong>Flutter</strong> / mobile application<br>
         <strong>MySQL and SQLServer</strong><br>
         <strong>AWS</strong> / Lambda, RDS, DeepLens, Apigateway and Lightsail<br>
         <strong>Unity (Game Engine)</strong> / Beginner game developer<br>
@@ -116,7 +115,7 @@ if (targetDiv !== null) { // check if the cv page
     var index = 0;
     sections.forEach(section => {
         const sectionDiv = document.createElement('div');
-        var contentSection = `<div class="col-7 p-3">
+        var contentSection = `<div class="p-3">
             <div class="mb-3">
                 <div class="card-body">
                     <h5 class="card-title">`+ section.titleEng + `</h5>
@@ -130,18 +129,19 @@ if (targetDiv !== null) { // check if the cv page
                 </div>
             </div>
         </div>`;
-        var imageSection = `<img class="col-5" src="` + section.imgLink + `" alt="` + section.imgAlt + `">`;
-        if (index % 2 == 0) {
-            sectionDiv.innerHTML = `<div class="row row-cols-2 g-2 p-5">
+        var order = (index % 2 == 0) ? 'order-first' : '';
+        var imageSection = `<img class="` + order + `" src="` + section.imgLink + `" alt="` + section.imgAlt + `">`;
+        // if (index % 2 == 0) {
+        sectionDiv.innerHTML = `<div class="row row-cols-1 row-cols-lg-2 g-2 p-5">
                 `+ contentSection + `
                 `+ imageSection + `
             </div>`;
-        } else {
-            sectionDiv.innerHTML = `<div class="row row-cols-2 g-2 p-5">
-                `+ imageSection + `
-                `+ contentSection + `
-            </div>`;
-        }
+        // } else {
+        //     sectionDiv.innerHTML = `<div class="row row-cols-1 row-cols-lg-2 g-2 p-5">
+        //         `+ imageSection + `
+        //         `+ contentSection + `
+        //     </div>`;
+        // }
         targetDiv.appendChild(sectionDiv);
         index++;
     });
