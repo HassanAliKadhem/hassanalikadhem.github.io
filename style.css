@@ -1,0 +1,122 @@
+:root {
+    /* text color for the regular text */
+    --text: rgb(60, 60, 60);
+    /* the purple used for the background */
+    --purple: rgb(227, 206, 227);
+    /* accent color */
+    --slate: darkslateblue;
+
+}
+
+body {
+    font-size: larger;
+    background: var(--purple);
+    font-family: monospace, monospace;
+}
+
+.cover {
+    background: url("back.jpeg");
+    background-size: cover;
+    border-radius: 1rem;
+    margin: 2rem;
+    height: 300px;
+}
+
+nav div {
+    color: var(--text);
+    grid-auto-flow: row;
+    margin: 1rem;
+}
+
+nav div:first-of-type {
+    text-align: left;
+}
+
+nav div:last-of-type {
+    text-align: right;
+}
+
+@media (max-width: 800px) {
+    nav div:first-of-type {
+        text-align: center;
+    }
+
+    nav div:last-of-type {
+        text-align: center;
+    }
+}
+
+nav a {
+    color: var(--slate);
+    text-decoration: none;
+    padding: 0.25rem;
+}
+
+nav a.current,
+nav a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    margin: 1rem;
+    color: var(--slate);
+    opacity: 0.25;
+    box-shadow: 0px 0px 5px var(--slate);
+}
+
+.card {
+    color: var(--text);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 1rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: inset 0rem 0rem 0.25rem var(--slate);
+}
+
+.list {
+    display: block;
+}
+
+.list li {
+    display: inline-flex;
+    padding: 0.75rem;
+    margin: 0.25rem 0.25rem;
+    background: rgb(255, 238, 254);
+    border-radius: 1rem;
+}
+
+
+.card img {
+    width: 300px;
+    border-radius: 0.75rem;
+}
+
+@media (max-width: 800px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .card img {
+        width: 100%;
+    }
+}
+
+.card div {
+    margin-right: 1rem;
+}
+
+.card p {
+    font-style: italic;
+}
+
+.card a, .card h1 {
+    color: slateblue;
+}
+
+footer {
+    color: var(--text);
+    text-align: center;
+}
