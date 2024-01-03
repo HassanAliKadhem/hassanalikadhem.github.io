@@ -73,7 +73,8 @@ hr {
     margin: 1rem auto;
     padding: 2rem;
     border-radius: 1rem;
-    box-shadow: inset 0rem 0rem 0.25rem var(--slate);
+    box-shadow: 0rem 0rem 0.5rem var(--slate);
+    background: rgb(133, 125, 185);
 }
 
 .list {
@@ -113,7 +114,7 @@ hr {
 }
 
 .card a, .card h1 {
-    color: slateblue;
+    color: rgb(214, 214, 214);
 }
 
 footer {

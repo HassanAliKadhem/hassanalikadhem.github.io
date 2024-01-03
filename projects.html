@@ -23,32 +23,54 @@
     </footer>
     <script>
         let projects = [
-            [
-                "Typing practice",
-                "A game that helps you practice and improve your typing skills on your mobile phones in order to type faster and more accurately.\n\nThis game uses emojis as graphics to show you something familiar. It also has a stats screen that tracks your progress over the days.",
-                "https://play.google.com/store/apps/details?id=com.hasankadhemdev.typing_practice&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1",
-                "assets/typing_practice.png",
-            ],
-            [
-                "Whats link generator",
-                "This app can generate a link to open a chat directly in Whats with a number that you haven't added or you can add your own number and send it to people so that they can send you messages without adding your number\n\nit also generates a QR code that you can screenshot to save.",
-                "https://play.google.com/store/apps/details?id=com.hasankadhemdev.whats_link_generator&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1",
-                "assets/whats_link_generator.png",
-            ],
-            [
-                "When did you last?",
-                "This app shows a list of your actions and when you last did any of them.\nthis application intentionally does not use notification or reminders.\n\nit allows you to record your action on your own pace.",
-                "https://play.google.com/store/apps/details?id=com.hasankadhemdev.when_did_you&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1",
-                "assets/when_did_you.png",
-            ],
-            [
-                "Most Difficult Tic Tac Toe",
-                "Can you beat the most difficult Tic Tac Toe game in the world?\n\nyou can compete against the AI in this simple childhood game, the game also has a feature where the last 1000 matches are saved.",
-                "https://play.google.com/store/apps/details?id=com.hasankadhemdev.difficult_tic_tac_toe&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1",
-                "assets/tic_tac_toe.png",
-            ],
+            {
+                name: "Typing practice",
+                description: "A game that helps you practice and improve your typing skills on your mobile phones in order to type faster and more accurately.\n\nThis game uses emojis as graphics to show you something familiar. It also has a stats screen that tracks your progress over the days.",
+                type: "playStore",
+                link: "https://play.google.com/store/apps/details?id=com.hasankadhemdev.typing_practice&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1",
+                image: "assets/typing_practice.png",
+            },
+            {
+                name: "Whats link generator",
+                description: "This app can generate a link to open a chat directly in Whats with a number that you haven't added or you can add your own number and send it to people so that they can send you messages without adding your number\n\nit also generates a QR code that you can screenshot to save.",
+                type: "playStore",
+                link: "https://play.google.com/store/apps/details?id=com.hasankadhemdev.whats_link_generator&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1",
+                image: "assets/whats_link_generator.png",
+            },
+            {
+                name: "3D image Mapper",
+                description: "A simple browser based tool that takes an image(through drag and drop) and puts it over a 3D object in this case a billboard or a flag that fluttering in the wind.",
+                type: "godot",
+                link: "/billboard/index.html",
+                image: "assets/3dMapper.png",
+            },
+            {
+                name: "When did you last?",
+                description: "This app shows a list of your actions and when you last did any of them.\nthis application intentionally does not use notification or reminders.\n\nit allows you to record your action on your own pace.",
+                type: "playStore",
+                link: "https://play.google.com/store/apps/details?id=com.hasankadhemdev.when_did_you&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1",
+                image: "assets/when_did_you.png",
+            },
+            {
+                name: "Most Difficult Tic Tac Toe",
+                description: "Can you beat the most difficult Tic Tac Toe game in the world?\n\nyou can compete against the AI in this simple childhood game, the game also has a feature where the last 1000 matches are saved.",
+                type: "playStore",
+                link: "https://play.google.com/store/apps/details?id=com.hasankadhemdev.difficult_tic_tac_toe&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1",
+                image: "assets/tic_tac_toe.png",
+            },
         ];
         let article = document.getElementsByTagName("article")[0];
+
+        function getLinkFromType(type, link) {
+            if (type == "playStore") {
+                return `<a href='${link}'>
+                    <img alt='Get it on Google Play' width="306"
+                        src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' />
+                </a>`;
+            } else if (type == "godot"){
+                return `<a href='${link}'>Check it out</a>`
+            }
+        }
 
         projects.forEach((project, index) => {
             // if (index > 0) {
@@ -56,14 +78,10 @@
             // }
             let newElm = document.createElement("div");
             newElm.classList.add("card");
-            newElm.innerHTML = `<div><h1>${project[0]}</h1>
-            <p>${project[1]}</p>
-            <a
-                href='${project[2]}'>
-                <img alt='Get it on Google Play' width="306"
-                    src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' />
-            </a></div>
-            <img src="${project[3]}" alt="..." />`;
+            newElm.innerHTML = `<div><h1>${project.name}</h1>
+            <p>${project.description}</p>
+            ${getLinkFromType(project.type, project.link)}</div>
+            <img src="${project.image}" alt="..." />`;
             article.appendChild(newElm);
         })
     </script>
