@@ -1,5 +1,7 @@
-## Hello There.
-my name is Hasan Kadhem
+## My name is Hasan Kadhem
+I am a highly motivated developer. i like using Typescript, Dart, Flutter and Go
+you can contact me through mey email
+hassanali92.ha@gmail.com
 
 ![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=HassanAliKadhem&theme=github)
 
