@@ -1,0 +1,69 @@
+body {
+    background: darkslategray;
+    color: whitesmoke;
+}
+
+dialog {
+    background: darkslategray;
+    color: whitesmoke;
+}
+
+dialog::backdrop {
+    background: rgba(0, 186, 173, 0.25);
+}
+
+dialog form {
+    display: grid;
+}
+
+dialog form label input {
+    width: 100%;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    div:first-of-type {
+        grid-column: 1/3;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    #content {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.section {
+    border: 1px white solid;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.overflow {
+    overflow-y: scroll;
+    aspect-ratio: 1;
+}
+
+.label {
+    position: absolute;
+    transform: translateX(-50%);
+    background: white;
+    color: black;
+    padding: 5px;
+    opacity: 0;
+}
+
+.label:hover {
+    opacity: 100;
+}
+
+.legend {
+    position: absolute;
+    transform: translateX(-50%);
+    bottom: -1.5%;
+    font-size: 0.9vw;
+}
